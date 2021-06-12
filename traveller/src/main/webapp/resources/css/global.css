@@ -1,0 +1,23 @@
+@charset "UTF-8";
+body{
+    background: #d2d2ea;
+}
+.card-form{
+    width: 25em;
+    margin: 10px auto;
+}
+.viagem-list-detail {
+    flex: 1 1 0;
+    -ms-flex: 1 1 0;
+}
+.viagem-list-item {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    padding: 2rem;
+}
+.viagem-name {
+    font-size: 2rem;
+    font-weight: 700;
+}

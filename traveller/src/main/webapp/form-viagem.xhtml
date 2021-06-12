@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="_template.xhtml">
+	<ui:define name="content">
+		<p:messages>
+			<p:autoUpdate />
+		</p:messages>
+		<h:form>
+			<p:card class="card-form">
+				<f:facet name="title">New Travel</f:facet>
+
+				<h:panelGrid columns="2">
+					<p:outputLabel value="Origem" for="origem" />
+					<p:inputText id="origem" value="#{viagemBean.viagem.origem}"
+						required="true">
+						<f:ajax event="blur" render="messages" />
+					</p:inputText>
+					<p:outputLabel value="Destino" for="destino" />
+					<p:inputText id="destino" value="#{viagemBean.viagem.destino}"
+						required="true">
+						<f:ajax event="blur" render="messages" />
+					</p:inputText>
+					<p:outputLabel value="Horário" for="horario" />
+					<p:inputText id="horario" value="#{viagemBean.viagem.horario}"
+						required="true">
+						<f:ajax event="blur" render="messages" />
+					</p:inputText>
+					<p:outputLabel value="Data" for="data" />
+					<p:inputMask id="data" value="#{viagemBean.viagem.data}"
+						required="true" mask="99/99/9999"
+						requiredMessage="Data inválida! Siga o padrão:dd/MM/yyyy">
+						<f:ajax event="blur" render="messages" />
+					</p:inputMask>
+					<p:outputLabel value="Companhia Aérea" for="companhiaAerea" />
+					<p:inputText id="companhiaAerea" value="#{viagemBean.viagem.companhiaAerea}"
+						required="true">
+						<f:ajax event="blur" render="messages" />
+					</p:inputText>
+
+					<p:outputLabel value="Valor" for="valor" />
+					<p:inputText id="valor" value="#{viagemBean.viagem.valor}"
+						required="true">
+						<f:ajax event="blur" render="messages" />
+					</p:inputText>
+
+
+
+				</h:panelGrid>
+
+				<f:facet name="footer">
+					<p:commandButton icon="pi pi-check" value="Save"
+						action="#{viagemBean.save}">
+						<f:ajax execute="@form" render="form-setups" />
+					</p:commandButton>
+					
+				</f:facet>
+			</p:card>
+		</h:form>
+
+
+	</ui:define>
+
+</ui:composition>
+</html>

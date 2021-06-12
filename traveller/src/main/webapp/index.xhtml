@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	>
+
+<ui:composition template="_template.xhtml">
+	<ui:define name="content">
+		<div class="product card">
+    <h:form id="form">
+        <p:dataView var="viagem" value="#{viagemBean.viagens}" rows="12" paginator="true"
+                    paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink}"
+                    gridIcon="pi pi-th-large" listIcon="pi pi-bars"
+                    layout="grid" gridRowStyleClass="p-lg-6 p-xl-4" flex="true">
+
+            <p:dataViewGridItem>
+                <div class="product-grid-item card border-1">
+                    <div class="product-grid-item-top">
+                        <div>
+                            <i class="pi pi-tag product-category-icon"/>
+                            <span class="product-category">#{product.category}</span>
+                        </div>
+                        <span class="product-badge status-#{product.inventoryStatus.name().toLowerCase()}">#{product.inventoryStatus.text}</span>
+                    </div>
+                    <div class="product-grid-item-content">
+                        <p:graphicImage url="https://cdn.pixabay.com/photo/2018/09/25/17/14/aircraft-3702676_960_720.jpg" width="350px" height="200px"/>
+                        
+                        <div class="viagem-name">Origem: #{viagem.origem}</div>
+                        <div class="viagem-description">Destino: #{viagem.destino}</div>
+                        <div class="viagem-data">Data: #{viagem.data}</div>
+                        <div class="viagem-data">Horário voo: #{viagem.horario}</div>
+                        <div class="viagem-data">Companhia aérea: #{viagem.companhiaAerea}</div>
+                        <div class="viagem-data">Valor da passagem: #{viagem.valor} reais</div>
+                    </div>
+                    <div class="product-grid-item-bottom">
+                
+                        <p:commandButton type="button"
+                                            value="Reservar"
+                                            icon="pi pi-shopping-cart"
+                                            disabled="#{product.inventoryStatus == 'OUTOFSTOCK'}">
+                        </p:commandButton>
+                    </div>
+                </div>
+            </p:dataViewGridItem>
+
+            <p:dataViewListItem>
+                <div class="viagem-list-item">
+                    <p:graphicImage url="https://cdn.pixabay.com/photo/2018/09/25/17/14/aircraft-3702676_960_720.jpg" width="350px" height="200px"/>
+                    <div class="viagem-list-detail">
+                    	<div class="viagem-name">Origem: #{viagem.origem}</div>
+                        <div class="viagem-description">Destino: #{viagem.destino}</div>
+                        <div class="viagem-data">Data: #{viagem.data}</div>
+                        <div class="viagem-data">Horário do voo: #{viagem.horario}</div>
+                        <div class="viagem-data">Companhia aérea: #{viagem.companhiaAerea}</div>
+                        <div class="viagem-data">Valor da passagem: #{viagem.valor} reais</div>
+                        
+                        
+                    </div>
+                    <div class="viagem-list-action">
+                        
+                        <p:commandButton type="button"
+                                            value="Reservar"
+                                            icon="pi pi-shopping-cart"
+                                            disabled="#{product.inventoryStatus == 'OUTOFSTOCK'}">
+                        </p:commandButton>
+                        
+                    </div>
+                </div>
+            </p:dataViewListItem>
+        </p:dataView>
+
+    </h:form>
+</div>
+	
+	
+	</ui:define>
+	
+</ui:composition>
+</html>
