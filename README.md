@@ -4,10 +4,10 @@ video explicação do trabalho : https://drive.google.com/file/d/12SZhtHyIlgaa2E
 
 ### Grupo EagleEye
 Integrantes:
-Carlos Augusto Sakitani - RM85309
-Felipe Jesus Karimata - RM84912
-Fernanda Eiko Kinoshita - RM84668
-Jessica Yuki Toyota - RM85852
-Lilian Akemi Ofusa Miyamura - RM84641
-Mateus Pedroso Balduino - RM85582 
+Carlos Augusto Sakitani 
+Felipe Jesus Karimata
+Fernanda Eiko Kinoshita 
+Jessica Yuki Toyota 
+Lilian Akemi Ofusa Miyamura 
+Mateus Pedroso Balduino  
 
